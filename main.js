@@ -39,3 +39,23 @@ function showAttendancePercentage(studentsArray) {
   alert(`Attendance percentage: ${percentage}%`);
 }
 showAttendancePercentage(students);
+
+// Function createTeams
+
+// const numberOfTeams = Number(
+//   prompt("Enter the number of teams you want to create :")
+// );
+
+function PresentStudentsList(studentsArray) {
+  let presentStudents = [];
+
+  for (let i = 0; i < studentsArray.length; i++) {
+    if (studentsArray[i].attendance === true) {
+      presentStudents.push(studentsArray[i].name);
+    }
+  }
+  return presentStudents;
+}
+
+const presentStudents = PresentStudentsList(students);
+console.log("Present Students:", presentStudents);
