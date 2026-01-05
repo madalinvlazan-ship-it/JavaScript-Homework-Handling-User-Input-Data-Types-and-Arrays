@@ -12,4 +12,14 @@ function getUserInfo() {
   return { name, age, attendance };
 }
 
-getUserInfo();
+// Create an array to hold students data
+
+let students = [];
+const numOfStudents = Number(
+  prompt("Enter the number of students to register:")
+);
+
+for (let i = 0; i < numOfStudents; i++) {
+  const student = getUserInfo();
+  students.push(student);
+}
