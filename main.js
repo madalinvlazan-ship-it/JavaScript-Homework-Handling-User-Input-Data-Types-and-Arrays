@@ -42,9 +42,9 @@ showAttendancePercentage(students);
 
 // Function createTeams
 
-// const numberOfTeams = Number(
-//   prompt("Enter the number of teams you want to create :")
-// );
+const numberOfTeams = Number(
+  prompt("Enter the number of teams you want to create :")
+);
 
 function PresentStudentsList(studentsArray) {
   let presentStudents = [];
@@ -57,5 +57,35 @@ function PresentStudentsList(studentsArray) {
   return presentStudents;
 }
 
-const presentStudents = PresentStudentsList(students);
-console.log("Present Students:", presentStudents);
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+function createTeams(studentsArray, numberOfTeams) {
+  const presentStudents = PresentStudentsList(students);
+  shuffleArray(presentStudents);
+
+  const teams = [];
+
+  for (let i = 0; i < numberOfTeams; i++) {
+    teams.push([]);
+  }
+
+  for (let i = 0; i < presentStudents.length; i++) {
+    const teamIndex = i % numberOfTeams;
+    teams[teamIndex].push(presentStudents[i]);
+  }
+
+  for (let i = 0; i < teams.length; i++) {
+    console.log(`Team` + (i + 1));
+    for (let j = 0; j < teams[i].length; j++) {
+      console.log(teams[i][j]);
+    }
+  }
+  return teams;
+}
+createTeams(students, numberOfTeams);
