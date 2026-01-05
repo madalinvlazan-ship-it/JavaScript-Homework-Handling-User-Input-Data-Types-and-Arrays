@@ -23,3 +23,19 @@ for (let i = 0; i < numOfStudents; i++) {
   const student = getUserInfo();
   students.push(student);
 }
+
+// Create showAttendancePercentage function
+
+function showAttendancePercentage(studentsArray) {
+  let presentStudents = 0;
+
+  for (let i = 0; i < studentsArray.length; i++) {
+    if (studentsArray[i].attendance === true) {
+      presentStudents++;
+    }
+  }
+
+  const percentage = (presentStudents / studentsArray.length) * 100;
+  alert(`Attendance percentage: ${percentage}%`);
+}
+showAttendancePercentage(students);
