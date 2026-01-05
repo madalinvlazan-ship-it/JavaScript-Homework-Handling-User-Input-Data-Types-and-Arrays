@@ -1,0 +1,30 @@
+h1 {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 25px;
+}
+
+h2 {
+  color: #7f8c8d;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+div {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+ol {
+  margin-left: 20px;
+}
+
+/* Elemente listă */
+li {
+  margin-bottom: 15px;
+  padding-left: 5px;
+}
